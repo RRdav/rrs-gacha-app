@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "jikan_id": 1,
+    "name": "Eren Yeager",
+    "image_url": "placeholder.png",
+    "anime_series": "Attack on Titan",
+    "description": "The determined protagonist of Attack on Titan, driven by a desire for freedom and vengeance.",
+    "rarity": "legendary"
+  },
+  {
+    "id": 2,
+    "jikan_id": 73711,
+    "name": "Mikasa Ackerman",
+    "image_url": "placeholder.png",
+    "anime_series": "Attack on Titan",
+    "description": "A quiet and stoic soldier, fiercely loyal to Eren and an exceptionally skilled fighter.",
+    "rarity": "super_rare"
+  },
+  {
+    "id": 3,
+    "jikan_id": 40,
+    "name": "Levi Ackerman",
+    "image_url": "placeholder.png",
+    "anime_series": "Attack on Titan",
+    "description": "Humanity's Strongest Soldier, known for his impeccable combat skills and stern demeanor.",
+    "rarity": "legendary"
+  },
+  {
+    "id": 4,
+    "jikan_id": 99723,
+    "name": "Sasha Blouse",
+    "image_url": "placeholder.png",
+    "anime_series": "Attack on Titan",
+    "description": "A lively and impulsive soldier with a strong love for food, often providing comic relief.",
+    "rarity": "rare"
+  },
+  {
+    "id": 5,
+    "jikan_id": 99722,
+    "name": "Connie Springer",
+    "image_url": "placeholder.png",
+    "anime_series": "Attack on Titan",
+    "description": "A friendly and somewhat impulsive soldier, often seen alongside Sasha and Jean.",
+    "rarity": "common"
+  },
+  {
+    "id": 6,
+    "jikan_id": 99721,
+    "name": "Jean Kirschtein",
+    "image_url": "placeholder.png",
+    "anime_series": "Attack on Titan",
+    "description": "A pragmatic and initially self-centered soldier who gradually grows into a reliable leader.",
+    "rarity": "rare"
+  },
+  {
+    "id": 7,
+    "jikan_id": 164057,
+    "name": "Reiner Braun",
+    "image_url": "placeholder.png",
+    "anime_series": "Attack on Titan",
+    "description": "A dedicated soldier with a strong sense of duty, carrying a heavy burden of secrets.",
+    "rarity": "super_rare"
+  },
+  {
+    "id": 8,
+    "jikan_id": 72545,
+    "name": "Armin Arlert",
+    "image_url": "placeholder.png",
+    "anime_series": "Attack on Titan",
+    "description": "An intelligent and strategic mind, often providing crucial insights despite his initial timidness.",
+    "rarity": "super_rare"
+  },
+  {
+    "id": 9,
+    "jikan_id": 139151,
+    "name": "Zeke Yeager",
+    "image_url": "placeholder.png",
+    "anime_series": "Attack on Titan",
+    "description": "Eren's half-brother, a complex and influential figure with his own vision for the world.",
+    "rarity": "legendary"
+  },
+  {
+    "id": 10,
+    "jikan_id": 59976,
+    "name": "Dot Pixis",
+    "image_url": "placeholder.png",
+    "anime_series": "Attack on Titan",
+    "description": "The eccentric and highly capable commander of the Southern Division of the Garrison Regiment.",
+    "rarity": "common"
+  },
+  {
+    "id": 11,
+    "jikan_id": 21673,
+    "name": "Kageyama Shigeo",
+    "image_url": "placeholder.png",
+    "anime_series": "Mob Psycho 100",
+    "description": "A seemingly ordinary middle schooler with immense psychic powers, often struggling to control his emotions.",
+    "rarity": "legendary"
+  },
+  {
+    "id": 12,
+    "jikan_id": 138656,
+    "name": "Arataka Reigen",
+    "image_url": "placeholder.png",
+    "anime_series": "Mob Psycho 100",
+    "description": "A self-proclaimed psychic and con artist who acts as Mob's mentor, despite having no real psychic abilities.",
+    "rarity": "super_rare"
+  },
+  {
+    "id": 13,
+    "jikan_id": 141071,
+    "name": "Teruki Hanazawa",
+    "image_url": "placeholder.png",
+    "anime_series": "Mob Psycho 100",
+    "description": "Another powerful esper who initially opposes Mob but later becomes his ally.",
+    "rarity": "rare"
+  },
+  {
+    "id": 14,
+    "jikan_id": 142646,
+    "name": "Dimple",
+    "image_url": "placeholder.png",
+    "anime_series": "Mob Psycho 100",
+    "description": "A powerful evil spirit who becomes Mob's companion and sometimes his dubious advisor.",
+    "rarity": "common"
+  },
+  {
+    "id": 15,
+    "jikan_id": 138658,
+    "name": "Ritsu Kageyama",
+    "image_url": "placeholder.png",
+    "anime_series": "Mob Psycho 100",
+    "description": "Mob's younger brother, intelligent and initially lacking psychic powers, but later develops them.",
+    "rarity": "rare"
+  }
+]
