@@ -50,8 +50,8 @@ Phase 1: Core Backend & Data Setup (Mock Data First)
         - [x] Implement the logic to randomly select a rarity based on these probabilities.
         - [x] Filter your `characters.json` data to get characters of the chosen rarity.
         - [x] Randomly select one character from the filtered list.
-        - [ ] Return the selected character as a JSON response (e.g., `res.status(200).json(rolledCharacter)`).
-        - [ ] Test: Use a tool like Postman, Insomnia, or even a simple fetch call in your browser's console or a temporary React component to ensure your `/api/roll` endpoint returns a character with the correct rarity.
+        - [x] Return the selected character as a JSON response (e.g., `res.status(200).json(rolledCharacter)`).
+        - [x] Test: Use a tool like Postman, Insomnia, or even a simple fetch call in your browser's console or a temporary React component to ensure your `/api/rolls` endpoint returns a character with the correct rarity.
 
 Phase 2: Frontend & UI Development (MVP)
 - [ ] Design Basic Roll Page:

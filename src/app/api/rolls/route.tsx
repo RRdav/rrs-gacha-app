@@ -1,14 +1,9 @@
 
 import charactersDataFromFile from '../../../../public/data/anime.json'
+import { Character } from '@/app/utils/types/Character';
 
 // Define types for the characters data
-export interface Character {
-    id: number;
-    name: string;
-    image_url: string;
-    rarity: 'common' | 'rare' | 'super_rare' | 'legendary';
-    description: string;
-}
+
 
 const charactersData: Character[] = charactersDataFromFile as Character[];
 
@@ -51,13 +46,7 @@ export async function POST(request: Request) {
 
     const rolledCharacter = characterRoll(rarityRoll());
 
-    // Deconstruct the rolled character
-    const { id, name, image_url, rarity, description } = rolledCharacter;
-
-    console.log(`Rolled Character: ${name} (Rarity: ${rarity})`);
-    console.log(`Image URL: ${image_url}`);
-
-    return new Response(JSON.stringify({message: "Data logged succesfully", data: charactersData}), {
+    return new Response(JSON.stringify({message: "Data logged succesfully", data: rolledCharacter}), {
         status: 200,
         headers: {
             'Content-Type': 'application/json',
