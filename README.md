@@ -58,13 +58,13 @@ Phase 2: Frontend & UI Development (MVP)
     - [x] Create a dedicated page for the gacha rolls (e.g., `app/roll/page.tsx` or `pages/roll.tsx`).
     - [x] Add a simple button with text like "Roll!" or "Spin!".
     - [x] Create a state variable (using `useState`) to store the `lastRolledCharacter`.
-    - [ ] Implement an `onClick` handler for the button that:
-        - [ ] Sets a loading state (`isLoading`).
-        - [ ] Makes a fetch call to your `/api/roll` endpoint.
-        - [ ] Updates the `lastRolledCharacter` state with the response.
-        - [ ] Clears the loading state.
-    - [ ] Display the `lastRolledCharacter`'s name and its `image_url` (which should currently be `placeholder.png`) below the button.
-    - [ ] Add simple styling (e.g., a border or text color) to indicate the rarity of the rolled character.
+    - [x] Implement an `onClick` handler for the button that:
+        - [x] Sets a loading state (`isLoading`).
+        - [x] Makes a fetch call to your `/api/roll` endpoint.
+        - [x] Updates the `lastRolledCharacter` state with the response.
+        - [x] Clears the loading state.
+    - [x] Display the `lastRolledCharacter`'s name and its `image_url` (which should currently be `placeholder.png`) below the button.
+    - [x] Add simple styling (e.g., a border or text color) to indicate the rarity of the rolled character.
 - [ ] Implement Basic Character Collection Display:
     - [ ] Create a separate page or component for displaying the user's collected characters (e.g., `app/collection/page.tsx` or `pages/collection.tsx`).
     - [ ] Create a `CollectionContext` using React's Context API to manage the list of owned characters.
