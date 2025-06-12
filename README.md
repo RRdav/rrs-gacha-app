@@ -39,7 +39,7 @@ Phase 1: Core Backend & Data Setup (Mock Data First)
 - [x] Set up your Next.js project:
     - [x] Create a new Next.js project using `npx create-next-app@latest my-gacha-project --typescript --tailwind --app`.
     - [x] Verify the basic project runs with `npm run dev`.
-- [ ] Integrate Mock Data:
+- [x] Integrate Mock Data:
     - [x] Create a `public/data` folder in your project root.
     - [x] Save the `characters.json` file (with `placeholder.png` image URLs) inside `public/data`.
     - [x] Create the Gacha Roll API Route (using mock data):
@@ -55,9 +55,9 @@ Phase 1: Core Backend & Data Setup (Mock Data First)
 
 Phase 2: Frontend & UI Development (MVP)
 - [ ] Design Basic Roll Page:
-    - [ ] Create a dedicated page for the gacha rolls (e.g., `app/roll/page.tsx` or `pages/roll.tsx`).
-    - [ ] Add a simple button with text like "Roll!" or "Spin!".
-    - [ ] Create a state variable (using `useState`) to store the `lastRolledCharacter`.
+    - [x] Create a dedicated page for the gacha rolls (e.g., `app/roll/page.tsx` or `pages/roll.tsx`).
+    - [x] Add a simple button with text like "Roll!" or "Spin!".
+    - [x] Create a state variable (using `useState`) to store the `lastRolledCharacter`.
     - [ ] Implement an `onClick` handler for the button that:
         - [ ] Sets a loading state (`isLoading`).
         - [ ] Makes a fetch call to your `/api/roll` endpoint.

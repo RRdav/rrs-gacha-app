@@ -15,3 +15,4 @@
 - ```typescript
     const roll = () : Character => {return {test: "test"}};
   ```
+  - Make use of try catch finally blocks to handle errors and loading gracefully.
