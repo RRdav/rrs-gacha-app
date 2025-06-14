@@ -54,7 +54,7 @@ Phase 1: Core Backend & Data Setup (Mock Data First)
         - [x] Test: Use a tool like Postman, Insomnia, or even a simple fetch call in your browser's console or a temporary React component to ensure your `/api/rolls` endpoint returns a character with the correct rarity.
 
 Phase 2: Frontend & UI Development (MVP)
-- [ ] Design Basic Roll Page:
+- [x] Design Basic Roll Page:
     - [x] Create a dedicated page for the gacha rolls (e.g., `app/roll/page.tsx` or `pages/roll.tsx`).
     - [x] Add a simple button with text like "Roll!" or "Spin!".
     - [x] Create a state variable (using `useState`) to store the `lastRolledCharacter`.
@@ -66,7 +66,7 @@ Phase 2: Frontend & UI Development (MVP)
     - [x] Display the `lastRolledCharacter`'s name and its `image_url` (which should currently be `placeholder.png`) below the button.
     - [x] Add simple styling (e.g., a border or text color) to indicate the rarity of the rolled character.
 - [ ] Implement Basic Character Collection Display:
-    - [ ] Create a separate page or component for displaying the user's collected characters (e.g., `app/collection/page.tsx` or `pages/collection.tsx`).
+    - [x] Create a separate page or component for displaying the user's collected characters (e.g., `app/collection/page.tsx` or `pages/collection.tsx`).
     - [ ] Create a `CollectionContext` using React's Context API to manage the list of owned characters.
     - [ ] Wrap your application's root (`app/layout.tsx` or `pages/_app.tsx`) with the `CollectionProvider`.
     - [ ] In your roll page, after successfully rolling a character, use the `addCharacter` function from the `CollectionContext` to add the new character to the collection.

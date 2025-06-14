@@ -2,8 +2,6 @@
 import charactersDataFromFile from '../../../../public/data/anime.json'
 import { Character } from '@/app/utils/types/Character';
 
-// Define types for the characters data
-
 
 const charactersData: Character[] = charactersDataFromFile as Character[];
 

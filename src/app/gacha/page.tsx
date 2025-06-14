@@ -1,13 +1,19 @@
 'use client';
 
-import { useState } from "react";
-import Button from "../components/Button";
+import { useContext, useEffect, useState } from "react";
 import { Character } from "../utils/types/Character";
+import { CollectionContext } from "@/contexts/CollectionContext";
+import Button from "../components/Button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function GachaPage() {
     const [rolledCharacter, setRolledCharacter] = useState<Character | null>(null);
     const [isLoading, setIsLoading] = useState(false);
+    const [isExist, setIsExist] = useState(false);
+
+    // Get the context to update the collection
+    const {acquiredCharacters, setAcquiredCharacters} = useContext(CollectionContext);
 
     const handleRoll = async () => {
         try {
@@ -24,7 +30,24 @@ export default function GachaPage() {
             }
 
             const data = await response.json();
+
+            // Set rolled character to show it on the page
             setRolledCharacter(data.data);
+
+            // Check if the rolled character already exists in the collection
+            const characterExists = acquiredCharacters.some(
+                (character) => character.name === data.data.name
+            );
+
+            if( characterExists ) {
+                setIsExist(true);
+                return;
+            } else {
+                setIsExist(false);
+                // Add the rolled character to the collection
+                setAcquiredCharacters((prev: Character[]) => data.data ? [...prev, data.data] : prev);
+            }
+
         }
         catch (err) {
             console.error('Error fetching data:', err);
@@ -58,8 +81,13 @@ export default function GachaPage() {
                 )}
                 {isLoading && <p>Rolling...</p>}
 
+                {isExist && <p className="text-red-500">You already have this character in your collection!</p>}
+
                 <Button onClick={handleRoll}>
                     Roll!
+                </Button>
+                <Button>
+                    <Link href="/collection"> Collection </Link>
                 </Button>
             </main>
         </div>

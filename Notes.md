@@ -16,3 +16,25 @@
     const roll = () : Character => {return {test: "test"}};
   ```
   - Make use of try catch finally blocks to handle errors and loading gracefully.
+
+
+- Setting up Context Providers
+- Create your context file inside the src root directory, e.g., `src/contexts/CollectionContext.tsx`.
+- Define your context and provider:
+```typescript
+  export const CollectionContext = createContext({
+    acquiredCharacters: [] as Character[],
+    setAcquiredCharacters: (() => {}) as Dispatch<SetStateAction<Character[]>>,
+  });
+
+  export function CollectionProvider({children} : {children: React.ReactNode}) {
+      const [acquiredCharacters, setAcquiredCharacters] = useState<Character[]>([]);
+
+      return (
+          <CollectionContext.Provider value={{ acquiredCharacters, setAcquiredCharacters }}>
+              {children}
+          </CollectionContext.Provider>
+      );
+  }
+```
+- Remember to setup a setter function for the context state, so you can update the state from any component that consumes the context.
