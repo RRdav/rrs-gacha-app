@@ -39,7 +39,7 @@ export default function GachaPage() {
                 (character) => character.name === data.data.name
             );
 
-            if( characterExists ) {
+            if(characterExists) {
                 setIsExist(true);
                 return;
             } else {
