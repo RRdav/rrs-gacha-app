@@ -65,13 +65,13 @@ Phase 2: Frontend & UI Development (MVP)
         - [x] Clears the loading state.
     - [x] Display the `lastRolledCharacter`'s name and its `image_url` (which should currently be `placeholder.png`) below the button.
     - [x] Add simple styling (e.g., a border or text color) to indicate the rarity of the rolled character.
-- [ ] Implement Basic Character Collection Display:
+- [x] Implement Basic Character Collection Display:
     - [x] Create a separate page or component for displaying the user's collected characters (e.g., `app/collection/page.tsx` or `pages/collection.tsx`).
-    - [ ] Create a `CollectionContext` using React's Context API to manage the list of owned characters.
-    - [ ] Wrap your application's root (`app/layout.tsx` or `pages/_app.tsx`) with the `CollectionProvider`.
-    - [ ] In your roll page, after successfully rolling a character, use the `addCharacter` function from the `CollectionContext` to add the new character to the collection.
-    - [ ] In your collection page/component, retrieve and display the `ownedCharacters` from the `CollectionContext` in a list or grid format.
-    - [ ] Test: Roll multiple times, navigate to the collection page, and verify that all rolled characters (even duplicates) are displayed. Since you're not using a database yet, these will likely disappear on a full page refresh – that's expected for now.
+    - [x] Create a `CollectionContext` using React's Context API to manage the list of owned characters.
+    - [x] Wrap your application's root (`app/layout.tsx` or `pages/_app.tsx`) with the `CollectionProvider`.
+    - [x] In your roll page, after successfully rolling a character, use the `addCharacter` function from the `CollectionContext` to add the new character to the collection.
+    - [x] In your collection page/component, retrieve and display the `ownedCharacters` from the `CollectionContext` in a list or grid format.
+    - [x] Test: Roll multiple times, navigate to the collection page, and verify that all rolled characters (even duplicates) are displayed. Since you're not using a database yet, these will likely disappear on a full page refresh – that's expected for now.
 
 Phase 3: Database Integration & Persistence
 - [ ] Supabase Setup:
