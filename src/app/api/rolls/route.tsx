@@ -13,11 +13,12 @@ export async function POST(request: Request) {
 
         // Probabilites for each rarity
         const probabilities = {
-            common: 0.5, // 50%
-            rare: 0.3, // 30%
-            super_rare: 0.15, // 15%
-            legendary: 0.05, // 5%
-        }
+            common: 0.60,     // 60%
+            rare: 0.25,       // 25%
+            super_rare: 0.10, // 10%
+            legendary: 0.04,  // 4%
+            mythical: 0.01    // 1%
+        };
 
         const rand = Math.random();
             if (rand < probabilities.common) {
@@ -26,8 +27,10 @@ export async function POST(request: Request) {
                 return 'rare';
             } else if (rand < probabilities.common + probabilities.rare + probabilities.super_rare) {
                 return 'super_rare';
-            } else {
+            } else if (rand < probabilities.common + probabilities.rare + probabilities.super_rare + probabilities.legendary) {
                 return 'legendary';
+            } else {
+                return 'mythical';
             }
     }
 
