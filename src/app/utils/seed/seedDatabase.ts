@@ -15,6 +15,7 @@ interface Character {
     image_url: string;
     rarity: 'common' | 'rare' | 'super_rare' | 'legendary' | 'mythical';
     description: string;
+    series: string; // Optional field for series
 }
 
 async function seedDatabase(){
@@ -41,6 +42,24 @@ async function seedDatabase(){
                 about
             } = characterData;
 
+            // Get the series name from the character data
+            const animeURL = "https://api.jikan.moe/v4/characters/" + mal_id + "/anime";
+            const animeResponse = await fetch(animeURL);
+            let characterSeries: string[] = []; // Initialize an empty array for series names
+
+            if(animeResponse.ok) {
+                const anime = await animeResponse.json();
+                const animeData = anime.data;
+                // Extract the series name from the anime data
+                characterSeries = animeData.map((anime: any) => anime.anime.title);
+            }
+
+            // Join the series names into a single string or keep it as an array
+            const seriesName = characterSeries.join(', '); // Join series names into a string
+
+            // Extract the series name from the anime data
+
+
             // Add random rarity to the fetched character
             const rarities: Character['rarity'][] = ['common', 'rare', 'super_rare', 'legendary', 'mythical'];
             const randomRarity = rarities[Math.floor(Math.random() * rarities.length)];
@@ -52,9 +71,12 @@ async function seedDatabase(){
                 name: name,
                 image_url: image_url,
                 rarity: randomRarity,
-                description: about
+                description: about,
+                series: seriesName || "Unknown Series" // Use the series name or default to "Unknown Series"
             };
 
+
+            // console.log("Character to insert:", character);
 
             // Insert the characters into the database
 
