@@ -22,7 +22,7 @@ npm run dev
 - Add a login system, maybe use NextAuth.js?
 
 <!-- Some notes for backend stuff -->
-- Use Jikan API for anime characters : https://api.jikan.moe/v4/characters/50389/ example
+- Use Jikan API for anime characters : https://api.jikan.moe/v4/characters/109929/ example
 - Fetch about 500 characters, store in DB
 - After fetching and before storing to DB add a rarity field to each character
 
@@ -81,11 +81,11 @@ Phase 3: Database Integration & Persistence
 - [x] Design & Create Database Tables:
     - [x] In the Supabase SQL Editor (or UI), create your `characters` table with columns: `id` (PK, auto-increment), `jikan_id` (INT, unique, nullable), `name` (TEXT), `image_url` (TEXT), `anime_series` (TEXT, nullable), `description` (TEXT, nullable), `rarity` (TEXT).
 - [ ] Data Ingestion into Supabase:
-    - [ ] Modify your existing data ingestion script (or create a new one) to fetch characters from Jikan API.
-    - [ ] Implement rate limiting between Jikan calls.
-    - [ ] Process the Jikan data and assign rarity to each character (e.g., using your `determineRarity` logic, or manual assignment for selected characters).
-    - [ ] Use the Supabase JavaScript client (`supabase-js`) in your script to insert these characters into your Supabase `characters` table.
-    - [ ] Test: Verify characters are correctly populated in your Supabase database.
+    - [x] Modify your existing data ingestion script (or create a new one) to fetch characters from Jikan API.
+    - [x] Implement rate limiting between Jikan calls.
+    - [x] Process the Jikan data and assign rarity to each character (e.g., using your `determineRarity` logic, or manual assignment for selected characters).
+    - [x] Use the Supabase JavaScript client (`supabase-js`) in your script to insert these characters into your Supabase `characters` table.
+    - [x] Test: Verify characters are correctly populated in your Supabase database.
 - [ ] Update Gacha Roll API Route to Use Supabase:
     - [ ] In your `/api/roll` endpoint, replace the `characters.json` import with calls to your Supabase `characters` table using `supabase-js`.
     - [ ] Modify the logic to query `supabase.from('characters').select('*').eq('rarity', rolledRarity)`.
