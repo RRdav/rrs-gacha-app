@@ -6,6 +6,7 @@ First, run the development server:
 
 ```bash
 npm run dev
+npm run db:seed # if you have a seed script set up
 ```
 
 <!-- To build with -->
