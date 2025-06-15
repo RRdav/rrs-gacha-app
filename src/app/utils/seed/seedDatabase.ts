@@ -57,8 +57,6 @@ async function seedDatabase(){
             // Join the series names into a single string or keep it as an array
             const seriesName = characterSeries.join(', '); // Join series names into a string
 
-            // Extract the series name from the anime data
-
 
             // Add random rarity to the fetched character
             const rarities: Character['rarity'][] = ['common', 'rare', 'super_rare', 'legendary', 'mythical'];
@@ -79,7 +77,6 @@ async function seedDatabase(){
             // console.log("Character to insert:", character);
 
             // Insert the characters into the database
-
             try {
                 const { error } = await supabase
                 .from("gachacharacters")
