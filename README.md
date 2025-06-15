@@ -74,12 +74,12 @@ Phase 2: Frontend & UI Development (MVP)
     - [x] Test: Roll multiple times, navigate to the collection page, and verify that all rolled characters (even duplicates) are displayed. Since you're not using a database yet, these will likely disappear on a full page refresh – that's expected for now.
 
 Phase 3: Database Integration & Persistence
-- [ ] Supabase Setup:
-    - [ ] Create a new project on Supabase.
-    - [ ] Get your Supabase URL and public/service role keys.
-    - [ ] Add your Supabase credentials to a `.env.local` file in your project root (e.g., `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`).
-- [ ] Design & Create Database Tables:
-    - [ ] In the Supabase SQL Editor (or UI), create your `characters` table with columns: `id` (PK, auto-increment), `jikan_id` (INT, unique, nullable), `name` (TEXT), `image_url` (TEXT), `anime_series` (TEXT, nullable), `description` (TEXT, nullable), `rarity` (TEXT).
+- [x] Supabase Setup:
+    - [x] Create a new project on Supabase.
+    - [x] Get your Supabase URL and public/service role keys.
+    - [x]Add your Supabase credentials to a `.env.local` file in your project root (e.g., `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`).
+- [x] Design & Create Database Tables:
+    - [x] In the Supabase SQL Editor (or UI), create your `characters` table with columns: `id` (PK, auto-increment), `jikan_id` (INT, unique, nullable), `name` (TEXT), `image_url` (TEXT), `anime_series` (TEXT, nullable), `description` (TEXT, nullable), `rarity` (TEXT).
 - [ ] Data Ingestion into Supabase:
     - [ ] Modify your existing data ingestion script (or create a new one) to fetch characters from Jikan API.
     - [ ] Implement rate limiting between Jikan calls.
