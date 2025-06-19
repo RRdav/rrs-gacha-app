@@ -18,7 +18,7 @@ export default async function User() {
         await supabase.auth.signOut()
 
         // Redirect to the home page to refresh the session and UI
-        return redirect('/login')
+        return redirect('/')
     }
     return(
         <>
