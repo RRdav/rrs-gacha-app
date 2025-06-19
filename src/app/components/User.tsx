@@ -21,18 +21,22 @@ export default async function User() {
         return redirect('/login')
     }
     return(
-        <li>
-            {user ? (
-                <div>
-                    <p>Welcome, {userDisplayName}</p>
-                    <form action={signOut}>
-                        <Button type="submit">Sign Out</Button>
-                    </form>
-                </div>
-            ) : (
-                <Button><Link href="/login">Login</Link></Button>
-            )}
-        </li>
+        <>
+            <li>
+                {user ? (
+                    <div>
+                        <p>Welcome, {userDisplayName}</p>
+                        <form action={signOut}>
+                            <Button type="submit">Sign Out</Button>
+                        </form>
+                    </div>
+                ) : (
+                    <>
+                        <Button><Link href="/login">Login</Link></Button>
+                    </>
+                )}
+            </li>
+        </>
     )
 
 }

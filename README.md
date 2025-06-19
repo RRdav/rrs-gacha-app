@@ -103,9 +103,9 @@ Phase 4: Authentication & User Collections
     - [ ] Create a `pages/api/auth/[...nextauth].ts` file (for Pages Router) or integrate directly with the App Router's auth patterns.
     - [x]  Add sign-in/sign-out buttons to your UI.
     - [x]  Test: Verify users can register/login and log out.
-- [ ] Create `user_cards` table:
-    - [ ] In Supabase, create a `user_cards` table with columns: `id` (PK), `user_id` (FK to Supabase auth.users.id), `character_id` (FK to characters.id), `quantity` (INT, default 1), `obtained_at` (TIMESTAMP).
-    - [ ] Add Row-Level Security (RLS) policies to `user_cards` so users can only see/update their own collections.
+- [x] Create `user_cards` table:
+    - [x] In Supabase, create a `user_cards` table with columns: `id` (PK), `user_id` (FK to Supabase auth.users.id), `character_id` (FK to characters.id), `quantity` (INT, default 1), `obtained_at` (TIMESTAMP).
+    - [x] Add Row-Level Security (RLS) policies to `user_cards` so users can only see/update their own collections.
 - [ ] Update Gacha Roll API Route for User Collections:
     - [ ] After a successful roll, get the current authenticated user's ID from the session (provided by NextAuth.js).
     - [ ] Store the rolled character in the `user_cards` table, linking it to the `user_id` and `character_id`.

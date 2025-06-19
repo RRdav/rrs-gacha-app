@@ -1,6 +1,6 @@
 'use client';
 
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Character } from "../utils/types/Character";
 import { CollectionContext } from "@/contexts/CollectionContext";
 import Button from "../components/Button";

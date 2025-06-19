@@ -10,9 +10,9 @@ export default async function Header(){
             <h1>Gacha App</h1>
             <nav>
                 <ul>
-                    <li><a href="/">Home</a></li>
+                    <li><Link href="/">Home</Link></li>
                     <User />
-                    <li><a href="/private">Private Page</a></li>
+                    <li><Link href="/collection">Collection</Link></li>
                 </ul>
             </nav>
         </header>

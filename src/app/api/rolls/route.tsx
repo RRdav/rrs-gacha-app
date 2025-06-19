@@ -8,6 +8,12 @@ export async function POST(request: Request) {
     const supabase = await createClient();
     const { error, data } = await supabase.from("gachacharacters").select();
 
+    // get session data
+    const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
+
+    console.log("Session data:", sessionData);
+    console.log("Session error:", sessionError);
+
     const charactersData: Character[] = data as Character[];
 
     // Roll for a rarity
