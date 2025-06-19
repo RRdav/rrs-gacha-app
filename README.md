@@ -85,16 +85,16 @@ Phase 3: Database Integration & Persistence
     - [x]Add your Supabase credentials to a `.env.local` file in your project root (e.g., `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`).
 - [x] Design & Create Database Tables:
     - [x] In the Supabase SQL Editor (or UI), create your `characters` table with columns: `id` (PK, auto-increment), `jikan_id` (INT, unique, nullable), `name` (TEXT), `image_url` (TEXT), `anime_series` (TEXT, nullable), `description` (TEXT, nullable), `rarity` (TEXT).
-- [ ] Data Ingestion into Supabase:
+- [x] Data Ingestion into Supabase:
     - [x] Modify your existing data ingestion script (or create a new one) to fetch characters from Jikan API.
     - [x] Implement rate limiting between Jikan calls.
     - [x] Process the Jikan data and assign rarity to each character (e.g., using your `determineRarity` logic, or manual assignment for selected characters).
     - [x] Use the Supabase JavaScript client (`supabase-js`) in your script to insert these characters into your Supabase `characters` table.
     - [x] Test: Verify characters are correctly populated in your Supabase database.
-- [ ] Update Gacha Roll API Route to Use Supabase:
-    - [ ] In your `/api/roll` endpoint, replace the `characters.json` import with calls to your Supabase `characters` table using `supabase-js`.
-    - [ ] Modify the logic to query `supabase.from('characters').select('*').eq('rarity', rolledRarity)`.
-- [ ] Test: Ensure rolling still works correctly, now fetching from your live Supabase database.
+- [x] Update Gacha Roll API Route to Use Supabase:
+    - [x] In your `/api/roll` endpoint, replace the `characters.json` import with calls to your Supabase `characters` table using `supabase-js`.
+    - [x] Modify the logic to query `supabase.from('characters').select('*').eq('rarity', rolledRarity)`.
+- [x] Test: Ensure rolling still works correctly, now fetching from your live Supabase database.
 
 Phase 4: Authentication & User Collections
 - [ ] Implement NextAuth.js with Supabase:
