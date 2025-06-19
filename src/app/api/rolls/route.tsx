@@ -1,6 +1,6 @@
 
-import { Character } from '@/app/utils/types/Character';
-import { createClient } from '@/app/utils/supabase/client';
+import { Character, CharacterAcquired } from '@/app/utils/types/Character';
+import { createClient } from '@/app/utils/supabase/server';
 
 
 export async function POST(request: Request) {
@@ -9,10 +9,9 @@ export async function POST(request: Request) {
     const { error, data } = await supabase.from("gachacharacters").select();
 
     // get session data
-    const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
+    const { data: userData, error: userErr } = await supabase.auth.getUser();
+    const user = userData?.user;
 
-    console.log("Session data:", sessionData);
-    console.log("Session error:", sessionError);
 
     const charactersData: Character[] = data as Character[];
 
@@ -55,6 +54,22 @@ export async function POST(request: Request) {
     }
 
     const rolledCharacter = characterRoll(rarityRoll());
+
+    // Send acquired character to collection table
+    const characterCollection: CharacterAcquired = {
+        id: user!.id,
+        character_id: rolledCharacter!.id,
+        obtained_at: new Date().toISOString(),
+    };
+
+    try {
+        const { error } = await supabase.from('usercollection').insert(characterCollection);
+        if (error) {
+            throw error;
+        }
+    } catch (error) {
+        console.error('Error inserting character into collection:', error);
+    }
 
     return new Response(JSON.stringify({message: "Data logged succesfully", data: rolledCharacter}), {
         status: 200,

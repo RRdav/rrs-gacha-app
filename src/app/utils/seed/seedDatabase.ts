@@ -15,7 +15,7 @@ interface Character {
     image_url: string;
     rarity: 'common' | 'rare' | 'super_rare' | 'legendary' | 'mythical';
     description: string;
-    series: string; // Optional field for series
+    series: string;
 }
 
 async function seedDatabase(){
