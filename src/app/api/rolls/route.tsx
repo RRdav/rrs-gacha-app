@@ -1,12 +1,16 @@
 
-import charactersDataFromFile from '../../../../public/data/anime.json'
 import { Character } from '@/app/utils/types/Character';
+import { createClient } from '@/app/utils/supabase/client';
 
-
-const charactersData: Character[] = charactersDataFromFile as Character[];
 
 export async function POST(request: Request) {
     // Create gacha logic
+    const supabase = await createClient();
+    const { error, data } = await supabase.from("gachacharacters").select();
+
+    const charactersData: Character[] = data as Character[];
+
+    console.log("Characters data:", charactersData);
 
     // Roll for a rarity
     const rarityRoll = (): Character['rarity'] => {
@@ -20,6 +24,7 @@ export async function POST(request: Request) {
             mythical: 0.01    // 1%
         };
 
+    // Determine the rarity of the character you can roll
         const rand = Math.random();
             if (rand < probabilities.common) {
                 return 'common';

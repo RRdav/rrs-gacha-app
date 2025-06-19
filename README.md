@@ -32,6 +32,10 @@ npm run db:seed # if you have a seed script set up
 - Implement a rarity system, e.g., common, rare, epic, legendary.
 - Show the characters rolled in a list or grid format.
 
+<!-- Extra Features -->
+- Implement a rogue-like system where users can setup a team of characters and battle against other users or AI.
+- Implement a custom profile page where users can see their rolled characters, and decorate their profile
+- Implement a store where users can buy items or characters using a currency system.
 
 ## Project Phases (Thanks Gemini)
 
