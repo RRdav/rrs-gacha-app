@@ -3,7 +3,7 @@ import { updateSession } from './app/utils/supabase/middleware'
 
 export async function middleware(request: NextRequest) {
     // setup public paths that do not require authentication
-    const publicPaths = ['/login', '/signup', '/']
+    const publicPaths = ['/login', '/signup', '/', '/confirmation']
 
     // if the request is for a public path, skip session update
     if (publicPaths.includes(request.nextUrl.pathname)) {
