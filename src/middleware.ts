@@ -6,11 +6,10 @@ export async function middleware(request: NextRequest) {
     const publicPaths = ['/login', '/signup', '/']
 
     // if the request is for a public path, skip session update
-    if (publicPaths.some(path => request.nextUrl.pathname.startsWith(path))) {
+    if (publicPaths.includes(request.nextUrl.pathname)) {
         return
     }
 
-    // for all other paths, update the session
     return await updateSession(request)
 }
 
