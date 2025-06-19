@@ -8,6 +8,7 @@ export default async function User() {
     const { data, error } = await supabase.auth.getUser()
 
     const user = data?.user;
+    const userDisplayName = data?.user?.user_metadata.display_name;
 
     // Define the Server Action for signing out
     const signOut = async () => {
@@ -23,7 +24,7 @@ export default async function User() {
         <li>
             {user ? (
                 <div>
-                    <p>Welcome, {user.email}</p>
+                    <p>Welcome, {userDisplayName}</p>
                     <form action={signOut}>
                         <Button type="submit">Sign Out</Button>
                     </form>

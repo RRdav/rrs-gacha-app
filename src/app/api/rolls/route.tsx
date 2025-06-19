@@ -10,8 +10,6 @@ export async function POST(request: Request) {
 
     const charactersData: Character[] = data as Character[];
 
-    console.log("Characters data:", charactersData);
-
     // Roll for a rarity
     const rarityRoll = (): Character['rarity'] => {
 
