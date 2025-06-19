@@ -42,12 +42,12 @@ export default async function CollectionPage() {
                 Back to Gacha
             </Link>
             <h1>Hello, this is where your collection will show up!</h1>
-            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <ul className="pt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {userAcquiredCharacters.map((character, index) => (
                     <li key={index}>
                         <h2>{character.name}</h2>
                         <p>Rarity: {character.rarity}</p>
-                        <figure className="relative w-[500px] h-[500px]">
+                        <figure className="relative w-[100px] h-[100px]">
                             {character.image_url && (
                                 <Image
                                     src={character.image_url}

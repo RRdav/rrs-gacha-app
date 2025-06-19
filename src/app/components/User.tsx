@@ -24,7 +24,7 @@ export default async function User() {
         <>
             <li>
                 {user ? (
-                    <div>
+                    <div className="flex items-center gap-4">
                         <p>Welcome, {userDisplayName}</p>
                         <form action={signOut}>
                             <Button type="submit">Sign Out</Button>
