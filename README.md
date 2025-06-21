@@ -97,24 +97,24 @@ Phase 3: Database Integration & Persistence
 - [x] Test: Ensure rolling still works correctly, now fetching from your live Supabase database.
 
 Phase 4: Authentication & User Collections
-- [ ] Implement NextAuth.js with Supabase:
-    - [ ] Install `next-auth` and `@next-auth/supabase-adapter`.
-    - [ ] Configure NextAuth.js with the Supabase adapter (refer to NextAuth.js docs for details).
-    - [ ] Create a `pages/api/auth/[...nextauth].ts` file (for Pages Router) or integrate directly with the App Router's auth patterns.
+- [x] Implement NextAuth.js with Supabase:
+    - [x] Install `next-auth` and `@next-auth/supabase-adapter`.
+    - [x] Configure NextAuth.js with the Supabase adapter (refer to NextAuth.js docs for details).
+    - [x] Create a `pages/api/auth/[...nextauth].ts` file (for Pages Router) or integrate directly with the App Router's auth patterns.
     - [x]  Add sign-in/sign-out buttons to your UI.
     - [x]  Test: Verify users can register/login and log out.
 - [x] Create `user_cards` table:
     - [x] In Supabase, create a `user_cards` table with columns: `id` (PK), `user_id` (FK to Supabase auth.users.id), `character_id` (FK to characters.id), `quantity` (INT, default 1), `obtained_at` (TIMESTAMP).
     - [x] Add Row-Level Security (RLS) policies to `user_cards` so users can only see/update their own collections.
-- [ ] Update Gacha Roll API Route for User Collections:
-    - [ ] After a successful roll, get the current authenticated user's ID from the session (provided by NextAuth.js).
-    - [ ] Store the rolled character in the `user_cards` table, linking it to the `user_id` and `character_id`.
-    - [ ] Handle duplicates: If the user already has that character, increment the quantity instead of creating a new entry.
-- [ ] Display User's Persistent Collection:
-    - [ ] In your collection page/component, fetch the user's `user_cards` from Supabase (instead of localStorage or CollectionContext alone).
-    - [ ] Join with the `characters` table to get full character details.
-    - [ ] Display the collected characters, including their quantity.
-    - [ ] Test: Log in, roll characters, log out, log back in, and verify your collection persists.
+- [x] Update Gacha Roll API Route for User Collections:
+    - [x] After a successful roll, get the current authenticated user's ID from the session (provided by NextAuth.js).
+    - [x] Store the rolled character in the `user_cards` table, linking it to the `user_id` and `character_id`.
+    - [x] Handle duplicates: If the user already has that character, increment the quantity instead of creating a new entry.
+- [x] Display User's Persistent Collection:
+    - [x] In your collection page/component, fetch the user's `user_cards` from Supabase (instead of localStorage or CollectionContext alone).
+    - [x] Join with the `characters` table to get full character details.
+    - [x] Display the collected characters, including their quantity.
+    - [x] Test: Log in, roll characters, log out, log back in, and verify your collection persists.
 
 Phase 5: Polish & Deployment
 - [ ] Enhance UI/UX:
@@ -133,6 +133,7 @@ Phase 5: Polish & Deployment
 
 <!-- TODOS -->
 <!-- - Implement rarity based on pulled down favourites amount -->
+- Implement a way to delete characters from the collection
 - Implement SMTP server, since Supabase is full now
 - Implement error handlers for fronted
 - Implement notices for email confirmation sent

@@ -1,21 +1,41 @@
 'use client';
 
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Character } from "../utils/types/Character";
-import { CollectionContext } from "@/contexts/CollectionContext";
 import Button from "../components/Button";
 import Image from "next/image";
 import Link from "next/link";
+import { createClient } from "../utils/supabase/client";
 
 export default function GachaPage() {
     const [rolledCharacter, setRolledCharacter] = useState<Character | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [isExist, setIsExist] = useState(false);
 
-    // Get the context to update the collection
-    const {acquiredCharacters, setAcquiredCharacters} = useContext(CollectionContext);
-
     const handleRoll = async () => {
+        const supabase = await createClient();
+        const { data: userCollectionData, error } = await supabase.from("usercollection").select()
+        // Fetch the user's acquired characters from the database
+        const characterPromises = userCollectionData!.map(async (character, index) => {
+            const { data, error } = await supabase
+                .from("gachacharacters")
+                .select()
+                .eq('id', character.character_id)
+                .single();
+
+            if (error) {
+                console.error(`Error fetching character ${character.id}:`, error);
+                return null;
+            }
+            return data;
+        });
+
+        // Ensure that this variable is waiting for all promises to resolve
+        const resolvedCharacters = await Promise.all(characterPromises);
+
+        // Filter out any null values in case some characters were not found
+        const userAcquiredCharacters = resolvedCharacters.filter(character => character !== null);
+
         try {
             setIsLoading(true);
             const response = await fetch('/api/rolls', {
@@ -35,7 +55,7 @@ export default function GachaPage() {
             setRolledCharacter(data.data);
 
             // Check if the rolled character already exists in the collection
-            const characterExists = acquiredCharacters.some(
+            const characterExists = userAcquiredCharacters.some(
                 (character) => character.name === data.data.name
             );
 
@@ -45,7 +65,6 @@ export default function GachaPage() {
             } else {
                 setIsExist(false);
                 // Add the rolled character to the collection
-                setAcquiredCharacters((prev: Character[]) => data.data ? [...prev, data.data] : prev);
             }
 
         }

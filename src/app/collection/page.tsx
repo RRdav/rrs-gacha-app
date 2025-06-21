@@ -33,8 +33,6 @@ export default async function CollectionPage() {
     // Filter out any null values in case some characters were not found
     const userAcquiredCharacters = resolvedCharacters.filter(character => character !== null);
 
-    console.log("Resolved Characters:", userAcquiredCharacters);
-
 
     return (
         <main className="items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
