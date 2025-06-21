@@ -128,3 +128,11 @@ Phase 5: Polish & Deployment
     - [ ] Connect your GitHub repository to Vercel.
     - [ ] Ensure all environment variables are correctly configured in Vercel's settings.
     - [ ] Test: Perform full end-to-end testing on the deployed application.
+
+
+
+<!-- TODOS -->
+<!-- - Implement rarity based on pulled down favourites amount -->
+- Implement SMTP server, since Supabase is full now
+- Implement error handlers for fronted
+- Implement notices for email confirmation sent
