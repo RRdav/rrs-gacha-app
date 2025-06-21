@@ -36,6 +36,8 @@ npm run db:seed # if you have a seed script set up
 - Implement a rogue-like system where users can setup a team of characters and battle against other users or AI.
 - Implement a custom profile page where users can see their rolled characters, and decorate their profile
 - Implement a store where users can buy items or characters using a currency system.
+- Way for users to set 2 abilities, one common ability and special attack
+- Not too op, must set restrictions and cooldowns
 
 ## Project Phases (Thanks Gemini)
 

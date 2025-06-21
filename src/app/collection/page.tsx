@@ -1,9 +1,8 @@
-
-
-import { CollectionContext } from "@/contexts/CollectionContext"
 import Image from "next/image";
 import Link from "next/link";
 import { createClient } from "../utils/supabase/server";
+import Button from "../components/Button";
+import Delete from "./Delete";
 
 export default async function CollectionPage() {
 
@@ -34,6 +33,7 @@ export default async function CollectionPage() {
     const userAcquiredCharacters = resolvedCharacters.filter(character => character !== null);
 
 
+
     return (
         <main className="items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
             <Link href="/gacha" className=" text-blue-500 hover:underline">
@@ -55,6 +55,7 @@ export default async function CollectionPage() {
                                 />
                             )}
                         </figure>
+                        <Delete characterID={character.id}/>
                     </li>
                 ))}
             </ul>
